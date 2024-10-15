@@ -41,3 +41,5 @@ function binaryEquivalent(n) {
   return binaryEquivalent(Math.floor(n / 2)) + (n % 2);
 }
 console.log('binaryEquivalent: ', binaryEquivalent(15));
+
+// git testing

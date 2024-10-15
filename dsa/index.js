@@ -35,7 +35,7 @@ function twoSum(arr, k) {
 }
 
 const res = twoSum(nums, target);
-console.log("res: ", res);
+console.log('res: ', res);
 
 //2)
 //Palindrome Number
@@ -57,7 +57,7 @@ var isPalindrome = function (x) {
   //O(N)
   //O(1)
 };
-const str = "112211";
+const str = 112211;
 console.log(isPalindrome(str));
 
 //3)
@@ -69,7 +69,7 @@ console.log(isPalindrome(str));
 // Output: "fl"
 
 var longestCommonPrefix = function (strs) {
-  if (strs == "") return "";
+  if (strs == '') return '';
   // let flag = false
   // let ans = "";
   // for(let i=0; i<strs[0].length; i++){
@@ -88,7 +88,7 @@ var longestCommonPrefix = function (strs) {
   //O(1)
 
   strs = strs.sort();
-  let ans = "";
+  let ans = '';
   for (let i = 0; i < strs[0].length; i++) {
     if (strs[0][i] != strs[strs.length - 1][i]) break;
     ans += strs[0][i];
@@ -97,7 +97,7 @@ var longestCommonPrefix = function (strs) {
   //O(NlogN)
   //O(1);
 };
-const strs = ["flower", "flow", "flight"];
+const strs = ['flower', 'flight', 'flow'];
 console.log(longestCommonPrefix(strs));
 
 //4)
@@ -110,11 +110,11 @@ console.log(longestCommonPrefix(strs));
 // Output: true
 var isValid = function (s) {
   if (s.length % 2 == 1) return false;
-  let map = { "(": ")", "{": "}", "[": "]" };
+  let map = { '(': ')', '{': '}', '[': ']' };
   let stack = [];
   for (let i = 0; i < s.length; i++) {
-    if (s[i] == ")" || s[i] == "}" || s[i] == "]") {
-      if (stack.length === 0 || s[i] != stack[stack.length-1]) return false;
+    if (s[i] == ')' || s[i] == '}' || s[i] == ']') {
+      if (stack.length === 0 || s[i] != stack[stack.length - 1]) return false;
       else stack.pop();
     } else {
       stack.push(map[s[i]]);
@@ -122,5 +122,5 @@ var isValid = function (s) {
   }
   return stack.length === 0;
 };
-const paren = ['{', '[', '(', ')', ']', '}']
+const paren = ['{', '[', '(', ')', ']', '}'];
 console.log(isValid(paren));

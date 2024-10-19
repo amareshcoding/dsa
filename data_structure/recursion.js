@@ -115,26 +115,29 @@ function digitSum(n) {
 
 // 13) all subsequence recursion
 function allSubsequence(str, res, s, e) {
-  if (s <= e  && res != '') {
+  if (res != '') {
     console.log(res);
   }
   for (let i = s; i <= e; i++) {
     allSubsequence(str, res + str[i], i + 1, e);
   }
 }
-allSubsequence('abcd', '', 0, 4);
+// allSubsequence('abcd', '', 0, 3);
 
-function subsequence(n, str, nstr, ind) {
-  if (nstr.length !== 0) {
-    console.log(nstr.join(''));
-  }
-  if (n == ind) {
+// 14) no of valid paranthesis
+// formula (2n)!/n!*(n+1)!
+function validParanthesis(s, open, close, n) {
+  if (s.length === 2 * n) {
+    console.log(s);
     return;
   }
-  for (let i = ind; i < n; i++) {
-    nstr.push(str[i]);
-    subsequence(n, str, nstr, i + 1);
-    nstr.pop();
+
+  if (open < n) {
+    validParanthesis(s + '(', open + 1, close, n);
+  }
+
+  if (open > close) {
+    validParanthesis(s + ')', open, close + 1, n);
   }
 }
-// subsequence(3, 'abc', [], 0);
+// validParanthesis('', 0, 0, 3);

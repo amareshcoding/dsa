@@ -124,3 +124,21 @@ var isValid = function (s) {
 };
 const paren = ['{', '[', '(', ')', ']', '}'];
 console.log(isValid(paren));
+
+
+
+// sort an array with the absolute value of numbers
+// ex arr = []
+// ans array = [-1, 0, -2, -2, 2, 3, -7]
+
+
+
+// Toeplitz Matrix
+// every left-to-right descending diagonals has the same element
+/*
+[[1, 2, 3, 4],
+[5, 1, 2, 3],
+[6, 5, 1, 2],
+[7, 6, 5, 1]]
+
+*/

@@ -91,7 +91,7 @@ function longPalinn(str) {
 
   return max;
 }
-console.log(longPalinn(str));
+// console.log(longPalinn(str));
 
 // optimal solution O(n2)
 const lonPal = (str = 'a') => {
@@ -118,5 +118,37 @@ const lonPal = (str = 'a') => {
   }
   return max;
 };
-
 // console.log(lonPal(str));
+
+//----------------------------------------------------------
+//4) Word Break
+/**
+ * Given a string str and an array of words arr, determine if str can be
+ * segmented into a space separated sequence of one or more array words
+ * For example
+ * str = 'leetcode'
+ * arr = ['leet', 'code']
+ * return true, because 'leetcode' can be segmented as 'leet code'
+ */
+let str1 = 'leetcode';
+let arr3 = ['code', 'leet'];
+
+// O(n2) solution
+function wordBreak(str, arr, start) {
+  if (start == str.length) return true;
+
+  for (let word of arr) {
+    let len = word.length;
+    let end = start + len;
+
+    if (end > str.length) continue;
+
+    if (str.substring(start, end) == word) {
+      if (wordBreak(str, arr, end)) return true;
+    }
+  }
+  return false;
+}
+console.log(wordBreak(str1, arr3, 0));
+
+// solve it using DP
